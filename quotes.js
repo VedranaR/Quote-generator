@@ -1,17 +1,20 @@
 class Quotes {
   constructor() {
     this.url = "http://quotes.stormconsultancy.co.uk/random.json";
-  }
+  };
 
-  const response = fetch(this.url).then((response) => {
-    return response.json();
+  async getQuote (){
+    const res = await fetch(this.url);
+
+
   });
 
-  const quote = response.quote;
-  const author = response.author;
+  let quote = res.quote;
+  let author = res.author;
 
   return {
     quote,
     author
   }  
+}
 }
